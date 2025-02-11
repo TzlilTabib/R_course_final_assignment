@@ -60,16 +60,21 @@ df <- df |>
     mother_tongue = case_when(
       mother_tongue == "עברית" ~ "hebrew"),
     # Political orientation
-    political_camp = if_else(
-      political_camp_raw >= 60, "left",
-      if_else(political_camp_raw <= 40, "right", NA_character_)),
-    government_support = if_else(
-      government_support_raw >= 60, "Benet-Lapid",
-      if_else(government_support_raw <= 40, "Netanyahu", NA_character_)),
-    coalition_opposition = if_else(
-      coalition_opposition_raw >= 60, "opposition",
-      if_else(coalition_opposition_raw <= 40, "coalition", NA_character_)))
-
+    political_camp_raw       = as.numeric(political_camp_raw),
+    government_support_raw   = as.numeric(government_support_raw),
+    coalition_opposition_raw = as.numeric(coalition_opposition_raw),
+    political_camp = case_when(
+      political_camp_raw >= 60 ~ "left",
+      political_camp_raw <= 40 ~ "right",
+      TRUE ~ "undecided"),
+    government_support = case_when(
+      government_support_raw >= 60 ~ "Benet-Lapid",
+      government_support_raw <= 40 ~ "Netanyahu",
+      TRUE ~ "neutral"),
+    coalition_opposition = case_when(
+      coalition_opposition_raw >= 60 ~ "opposition",
+      coalition_opposition_raw <= 40 ~ "coalition",
+      TRUE ~ "unclear"))
 ## mutating dates
 df <- df |>
   mutate(
@@ -103,7 +108,7 @@ df <- df |>
     values_to = "rating")
 
 # Separating question type to two variables - support and extreme rating
-pretest_2.0_raw_long <- pretest_2.0_raw_long |>
+df <- df |>
   pivot_wider(
     names_from = question_type, 
     values_from = rating,
