@@ -1,4 +1,5 @@
 library(readxl)
+library(tidyr)
 library(dplyr)
 
 df <- read_excel("./collected_data.xlsx")
@@ -48,9 +49,10 @@ df <- df |>
 df <- df |>
   mutate(
     # Demographics
-    gender = case_when(
+    age = as.numeric(age),
+    gender = as.factor(case_when(
       gender == "גבר" ~ "male",
-      gender == "אישה" ~ "female"), 
+      gender == "אישה" ~ "female")), 
     education = case_when(
       education == "תיכונית מלאה" ~ "high school",
       education == "על-תיכונית" ~ "tertiary",
@@ -58,23 +60,25 @@ df <- df |>
       education == "תואר שני ומעלה"~ "MA and above",
       education == "אחר" ~ "other"),
     mother_tongue = case_when(
-      mother_tongue == "עברית" ~ "hebrew"),
+      mother_tongue == "עברית" ~ "hebrew",
+      TRUE ~ "other"),
     # Political orientation
     political_camp_raw       = as.numeric(political_camp_raw),
     government_support_raw   = as.numeric(government_support_raw),
     coalition_opposition_raw = as.numeric(coalition_opposition_raw),
-    political_camp = case_when(
+    political_camp = as.factor(case_when(
       political_camp_raw >= 60 ~ "left",
       political_camp_raw <= 40 ~ "right",
-      TRUE ~ "undecided"),
-    government_support = case_when(
+      TRUE ~ "undecided")),
+    government_support = as.factor(case_when(
       government_support_raw >= 60 ~ "Benet-Lapid",
       government_support_raw <= 40 ~ "Netanyahu",
-      TRUE ~ "neutral"),
-    coalition_opposition = case_when(
+      TRUE ~ "neutral")),
+    coalition_opposition = as.factor(case_when(
       coalition_opposition_raw >= 60 ~ "opposition",
       coalition_opposition_raw <= 40 ~ "coalition",
-      TRUE ~ "unclear"))
+      TRUE ~ "unclear")))
+
 ## mutating dates
 df <- df |>
   mutate(
@@ -94,7 +98,8 @@ df <- df |>
     ExternalReference   = NULL,
     LocationLatitude    = NULL,
     LocationLongitude   = NULL,
-    DistributionChannel = NULL)
+    DistributionChannel = NULL,
+    "NA"                = NULL)
 
 # Saving the raw data in a wide format before converting to a long format
 write.csv(df, "./raw_data_wide.csv")
@@ -112,9 +117,12 @@ df <- df |>
   pivot_wider(
     names_from = question_type, 
     values_from = rating,
-    names_prefix =  "")
+    names_prefix =  "") |>
+  mutate(
+    stimulus_identity = paste(stimulus_type, index, sep = "_"),
+    support = as.numeric(support),
+    extreme = as.numeric(extreme))
 
 # Saving the raw data on a long format
 write.csv(df, "./raw_data_long.csv")
-
 
