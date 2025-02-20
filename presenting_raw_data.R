@@ -1,7 +1,7 @@
 library(ggplot2)
 library(ggdist)
 
-df <- read.csv("./raw_data_wide.csv")
+df <- load("./raw_data_long.rdata")
 
 ## Bivariate plots
 # Age by gender histogram

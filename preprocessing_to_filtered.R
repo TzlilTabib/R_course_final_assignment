@@ -1,6 +1,6 @@
 library(dplyr)
 
-df <- read.csv("./raw_data_long.csv")
+load("raw_data_long.RData")
 
 ### RAW DATA TO FILTERED DATA --------------------------------------------------
 # Filtering NA rows (rating of the sample stimulus)
@@ -38,3 +38,5 @@ df <- df |>
   filter(!subject_code %in% outliers)
 
 write.csv(df, "./filtered_data_long.csv")
+save(df, file = "filtered_data_long.RData")
+

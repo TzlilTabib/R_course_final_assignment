@@ -121,8 +121,9 @@ df <- df |>
   mutate(
     stimulus_identity = paste(stimulus_type, index, sep = "_"),
     support = as.numeric(support),
-    extreme = as.numeric(extreme))
+    extreme = as.numeric(extreme),
+    stimulus_type = factor(stimulus_type,  levels = c("pro_right", "anti_left", "pro_left", "anti_right")))
 
 # Saving the raw data on a long format
 write.csv(df, "./raw_data_long.csv")
-
+save(df, file = "raw_data_long.RData")
