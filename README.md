@@ -21,15 +21,31 @@ Participants were also asked to fill a demographic questionnaire at the end cont
 ## The Reserch questions:
 1. Do different stimuli types arouse different support among left and right-wing affiliated participants?
 2. Is there a relationship between supporting posts and percieving the extremism levels of its' content?
-![Descriptive Plots](Figure_1.png)
-![Descriptive Plots](Figure_2.png)
-![Descriptive Plots](Figure_3.png)
-![Descriptive Plots](Figure_4.png)
-![Descriptive Plots](Figure_5.png)
-
 # Analysis
 ## Preproccessing
-Preproccessing of the data includes first a transition from collected to raw data. The following figures present descriptives of the raw data before filtering ourliers:
+1. Preproccessing of the data includes first a transition from collected to raw data. The following figures present descriptives of the raw data before filtering ourliers:
+<p float="left">
+  <img src="./figure_1.png" width="500" />
+  <img src="./figure_4.png" width="500" /> 
+<p float="left">
+  <img src="./figure_5.png" width="500" />
+  <img src="./figure_3.png" width="500" />
+<img src="./figure_2.png" width="500" />
+  
+2. Preprocessing from raw to filtered data, filtering outliers and unnecessary variables (n (outliers) = 3).  
+# Statistical analyses
+## Desciptives table
+Summarizing participants mean age (and SD) after filtering by gender and political affiliation.
+## Linear regression
+### Predicting support ratings of posts by the interaction between political affiliation (numeric score) and post type
+Mixed linear regression was used to measure the relationship between support and political affiliation ratings in the four stimulus type. Taking into account the dependency between different support ratings as each participant rated their support in all stimuli, subjects' identity was defined as a fixed effect.
+The results ...................
 
-and a raw to filtered data, filtering outliers and unnecessary variables.
-## Descr
+<img src="./figure_6.png" width="700" />
+
+## Logistic regression
+### Predicting dichotomic percieved extremicy of posts by support ratings
+Mixed logistic regression was used to measure the ability to predict extremicy labeling of posts by the level of support in it. Again, subjects' identity was treated as a random effect.
+The results ....................
+
+<img src="./figure_7.png" width="600" />
