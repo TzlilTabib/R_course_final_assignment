@@ -38,8 +38,9 @@ Participants were also asked to fill a demographic questionnaire at the end cont
 Summarizing participants mean age (and SD) after filtering by gender and political affiliation.
 ## Linear regression
 ### Predicting support ratings of posts by the interaction between political affiliation (continuous) and post type
-Mixed linear regression was used to measure the relationship between support and political affiliation ratings in the four stimulus type. Taking into account the dependency between different support ratings as each participant rated their support in all stimuli, subjects' identity was defined as a fixed effect.
-The results ...................
+The linear mixed model assessed whether support ratings differed across stimulus types (post types), while also considering participants’ political alignment (raw score). As this is a within-subject design, subjects identity was treated as a random effect. This served as a manipulation check to verify whether left and right-wing participants responded to the stimuli in the expected direction.
+
+The model revealed the expected interaction between political alignment and stimulus type, indicating that individuals' support ratings varied depending on both their political orientation and the nature of the stimulus. 
 
 <img src="./figure_6.png" width="700" />
 
