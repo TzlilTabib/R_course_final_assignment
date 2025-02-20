@@ -21,5 +21,15 @@ Participants were also asked to fill a demographic questionnaire at the end cont
 ## The Reserch questions:
 1. Do different stimuli types arouse different support among left and right-wing affiliated participants?
 2. Is there a relationship between supporting posts and percieving the extremism levels of its' content?
+![Descriptive Plots](Figure_1.png)
+![Descriptive Plots](Figure_2.png)
+![Descriptive Plots](Figure_3.png)
+![Descriptive Plots](Figure_4.png)
+![Descriptive Plots](Figure_5.png)
 
 # Analysis
+## Preproccessing
+Preproccessing of the data includes first a transition from collected to raw data. The following figures present descriptives of the raw data before filtering ourliers:
+
+and a raw to filtered data, filtering outliers and unnecessary variables.
+## Descr
