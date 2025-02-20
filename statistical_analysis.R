@@ -46,9 +46,9 @@ ggsave("./figure_6.png", figure_6, bg = "white", width = 10, height = 8)
 ## Logistic regression ---------------------------------------------------------
 # Predicting dichotomic extreme levels by support ratings
 # Coding a dichotomic variable for extreme ratings (using median extreme in sample)
-df <-df |>
+df <- df |>
   mutate(
-    extreme_binary <- ifelse(extreme >= median(extreme, na.rm = TRUE), 1, 0))
+    extreme_binary = ifelse(extreme >= median(extreme, na.rm = TRUE), 1, 0))
 
 # The model (subject code as a random effect)
 mixed_logit_model <- glmer(extreme_binary ~ support + (1 | subject_code), data = df, family = binomial)
@@ -57,7 +57,7 @@ summary(mixed_logit_model)
 # Calculating AUC
 df$predicted_prob <- predict(mixed_logit_model, type = "response")
 roc <- roc(df$extreme_binary, df$predicted_prob)
-auc(roc)
+auc <- auc(roc)
 
 # Plotting ROC with AUC value
 png("figure_7.png", width = 800, height = 600)

@@ -1,7 +1,8 @@
 library(ggplot2)
 library(ggdist)
+library(ggridges)
 
-df <- load("./raw_data_long.rdata")
+load("raw_data_long.RData")
 
 ## Bivariate plots
 # Age by gender histogram
