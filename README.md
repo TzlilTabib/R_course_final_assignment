@@ -1,5 +1,6 @@
 # R Course Final Assignment
-## Dataset: A behavioral pretest for the stimuli in an fMRI I am conducting as my thesis.
+## Dataset: 
+### A behavioral pretest for the stimuli in an fMRI I am conducting as my thesis.
 My thesis revolves around neural synchronization in response to political social media posts containing either outgroup derogating or ingroup appealing content. Our participants will be left and right wing-supporters, thus the 'X' (previously 'Twitter') posts are devided into 4 stimuli types:
 * Right wing making pro-right claims.
 * Right wing making anti-left claims.
@@ -21,5 +22,30 @@ Participants were also asked to fill a demographic questionnaire at the end cont
 ## The Reserch questions:
 1. Do different stimuli types arouse different support among left and right-wing affiliated participants?
 2. Is there a relationship between supporting posts and percieving the extremism levels of its' content?
+# Preproccessing
+1. Preproccessing of the data includes first a transition from collected to raw data. The following figures present descriptives of the raw data before filtering ourliers:
+<p float="left">
+  <img src="./figure_1.png" width="500" />
+  <img src="./figure_4.png" width="500" /> 
+<p float="left">
+  <img src="./figure_5.png" width="500" />
+  <img src="./figure_3.png" width="500" />
+<img src="./figure_2.png" width="500" />
+  
+2. Preprocessing from raw to filtered data, filtering outliers and unnecessary variables (n (outliers) = 3).  
+# Statistical analyses
+## Descriptive statistics
+Summarizing participants mean age (and SD) after filtering by gender and political affiliation.
+## Linear regression
+### Predicting support ratings of posts by the interaction between political affiliation (continuous) and post type
+Mixed linear regression was used to measure the relationship between support and political affiliation ratings in the four stimulus type. Taking into account the dependency between different support ratings as each participant rated their support in all stimuli, subjects' identity was defined as a fixed effect.
+The results ...................
 
-# Analysis
+<img src="./figure_6.png" width="700" />
+
+## Logistic regression
+### Predicting extremicy labeling of posts by support ratings
+Mixed logistic regression was used to measure the ability to predict extremicy labeling of posts by the level of support in it. Again, subjects' identity was treated as a random effect.
+The results ....................
+
+<img src="./figure_7.png" width="600" />
