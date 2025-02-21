@@ -62,5 +62,5 @@ auc <- auc(roc)
 # Plotting ROC with AUC value
 png("figure_7.png", width = 800, height = 600)
 figure_7 <- plot(roc, col = "blue", main = "ROC Curve for Logistic Regression", lwd = 2)
-legend("bottomright", legend = paste("AUC =", round(auc), 3), col = "blue", lwd = 2)
+legend("bottomright", legend = paste("AUC =", round(auc, 3)), col = "blue", lwd = 2)
 dev.off()
