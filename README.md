@@ -70,7 +70,7 @@ Mixed logistic regression was used to measure the ability to predict extremicy l
 The results showed that higher support ratings were significantly associated with a decreased probability of an extreme response (β = -0.478, p < 0.001), suggesting that moderate support levels were less likely to produce extreme reactions. 
 We found a negative coefficient for support (β = -0.478, p = 2e-16), indicating an inverse relationship with extreme responses.
 
-* Specifically, for each one-unit increase in support, the odds of an extreme response decrease by 38% (1 - 0.62 = 0.38).
+* Specifically, for each one-unit increase in support, the odds of an extreme response decrease by 38%.
 * In other words, higher support levels are associated with a lower likelihood of extreme responses.
 
 <img src="./figure_7.png" width="700" />
