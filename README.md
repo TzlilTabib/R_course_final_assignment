@@ -73,4 +73,4 @@ We found a negative coefficient for support (β = -0.478, p = 2e-16), indicating
 * Specifically, for each one-unit increase in support, the odds of an extreme response decrease by 38% (1 - 0.62 = 0.38).
 * In other words, higher support levels are associated with a lower likelihood of extreme responses.
 
-<img src="./figure_7.png" width="600" />
+<img src="./figure_7.png" width="700" />
