@@ -1,6 +1,6 @@
 # R Course Final Assignment
 ## Dataset: 
-### A behavioral pretest: testing the stimuli for an a planned fMRI study 
+### A behavioral pretest: testing the stimuli for a planned fMRI study 
 My thesis revolves around neural synchronization in response to political social media posts containing either outgroup derogatory or ingroup favoring content. 
 
 ### Participants and stimuli
