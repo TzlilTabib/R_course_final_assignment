@@ -66,6 +66,7 @@ df <- df |>
     political_camp_raw       = as.numeric(political_camp_raw),
     government_support_raw   = as.numeric(government_support_raw),
     coalition_opposition_raw = as.numeric(coalition_opposition_raw),
+    political_involvement    = as.numeric(political_involvement),
     political_camp = as.factor(case_when(
       political_camp_raw >= 60 ~ "left",
       political_camp_raw <= 40 ~ "right",

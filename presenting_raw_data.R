@@ -1,7 +1,6 @@
 library(ggplot2)
 library(ggdist)
 library(ggridges)
-
 load("raw_data_long.RData")
 
 ## Bivariate plots
@@ -69,9 +68,9 @@ ggsave("./figure_4.png", figure_4, bg = "white", width = 8, height = 6)
 
 # Political involvement by government support and political camp
 figure_5 <- ggplot(df, aes(x = political_involvement, y = government_support, fill = political_camp)) +
-  stat_halfeye(adjust = 0.5, justification = -0.2, .width = 0, alpha = 0.7) +
+  stat_halfeye(adjust = 1, justification = -0.3, .width = c(0.5, 0.9), alpha = 0.7) +
   geom_boxplot(width = 0.2, outlier.shape = NA, alpha = 0.7) +
-  geom_jitter(position = position_nudge(y = -0.2), alpha = 0.7) +
+  geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = 0.7) +
   theme_minimal() +
   labs(title = "Political involvement by government support and political camp",
        x     = "Political involvement",
