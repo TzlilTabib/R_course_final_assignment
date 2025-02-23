@@ -1,6 +1,6 @@
 # R Course Final Assignment
 ## Dataset: 
-### A behavioral pretest: testing the stimuli for an a planned fMRI study 
+### A behavioral pretest: testing the stimuli for a planned fMRI study 
 My thesis revolves around neural synchronization in response to political social media posts containing either outgroup derogatory or ingroup favoring content. 
 
 ### Participants and stimuli
@@ -15,7 +15,7 @@ As we already performed one pretest to choose the 18-posts that create the large
 The data was collected online via Qualtrics and originally contained 29 responses.
 Participants were asked to watch each stimulus, presented in batches by stimulus type, and to rate their level of support in the post and their perceived extremism level of it on a 1 to 7 Likert scale.
 At the end, participants were asked to answer a political attitudes questionnaire, containing 4 visual analog scales (values were not visible to respondents):
-* Political involvement
+* Political involvement (0 - 100)
 * Political wing affiliation - from right (0) to left (100)
 * Coalition (0) or opposition (100) support level
 * Governmental support in recent years - from Netanyahu (0) to Benet-Lapid (100)
@@ -67,9 +67,9 @@ Thus, interaction effects show that political alignment meaningfully influenced 
 ## Logistic regression
 ### Predicting extremicy labeling of posts by support ratings
 Mixed logistic regression was used to measure the ability to predict extremicy labeling of posts by the level of support in it. Again, subjects' identity was treated as a random effect. To use a logistic model, we used median values of extreme ratings to divide perceived extremism for each post to either extreme or not extreme.
-The results showed that higher support ratings were significantly associated with a decreased probability of an extreme response (β = -0.478, p < 0.001), suggesting that moderate support levels were less likely to produce extreme reactions. 
-We found a negative coefficient for support (β = -0.478, p = 2e-16), indicating an inverse relationship with extreme responses (AUC = .
-•  Specifically, for each one-unit increase in support, the odds of an extreme response decrease by 38% (1 - 0.62 = 0.38).
-•  In other words, higher support levels are associated with a lower likelihood of extreme responses.
+The results showed that higher support ratings were significantly associated with a decreased probability of an extreme response (β = -0.478, p = 2e-16), suggesting that moderate support levels were less likely to produce extreme reactions. 
 
-<img src="./figure_7.png" width="600" />
+* Specifically, for each one-unit increase in support, the odds of an extreme response decrease by 38%.
+* In other words, higher support levels are associated with a lower likelihood of extreme responses of political posts.
+
+<img src="./figure_7.png" width="700" />
