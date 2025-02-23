@@ -1,6 +1,7 @@
 library(ggplot2)
 library(ggdist)
 library(ggridges)
+
 load("raw_data_long.RData")
 
 ## Bivariate plots
