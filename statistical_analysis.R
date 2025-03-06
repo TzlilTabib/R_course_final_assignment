@@ -2,7 +2,7 @@ library(dplyr)
 library(lme4)
 library(ggplot2)
 library(ggh4x)
-library(pROC)
+library(ROCR)
 
 load("filtered_data_long.RData")
 
@@ -54,13 +54,16 @@ df <- df |>
 mixed_logit_model <- glmer(extreme_binary ~ support + (1 | subject_code), data = df, family = binomial)
 summary(mixed_logit_model)
 
-# Calculating AUC
+# Calculating model performance
 df$predicted_prob <- predict(mixed_logit_model, type = "response")
-roc <- roc(df$extreme_binary, df$predicted_prob)
-auc <- auc(roc)
+pred <- prediction(df$predicted_prob, df$extreme_binary)
+perf <- performance(pred, "tpr", "fpr")
 
 # Plotting ROC with AUC value
 png("figure_7.png", width = 800, height = 600)
-figure_7 <- plot(roc, col = "blue", main = "ROC Curve for Logistic Regression", lwd = 2)
+figure_7 <- plot(perf, col = "blue", main = "ROC Curve for Logistic Regression")
+abline(a = 0, b = 1, col = "gray", lty = 2)
+auc <- performance(pred, measure = "auc")@y.values[[1]]
 legend("bottomright", legend = paste("AUC =", round(auc, 3)), col = "blue", lwd = 2)
+
 dev.off()
