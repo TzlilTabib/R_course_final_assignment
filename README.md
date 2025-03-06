@@ -12,7 +12,7 @@ Our participants will be left- and right-wing supporters. Stimuli are real 'X' (
 As we already performed one pretest to choose the 18-posts that create the largest left-right support difference, this pretest contained 18 stimuli of each type. Each post was visually apparent and read-aloud by the same male speaker.
 
 ### Procedure
-The data was collected online via Qualtrics and originally contained 29 responses.
+The data was collected online via Qualtrics and originally contained 29 responses, differentiated by unique subjects codes.
 Participants were asked to watch each stimulus, presented in batches by stimulus type, and to rate their level of support in the post and their perceived extremism level of it on a 1 to 7 Likert scale.
 At the end, participants were asked to answer a political attitudes questionnaire, containing 4 visual analog scales (values were not visible to respondents):
 * Political involvement (0 - 100)
@@ -20,12 +20,12 @@ At the end, participants were asked to answer a political attitudes questionnair
 * Coalition (0) or opposition (100) support level
 * Governmental support in recent years - from Netanyahu (0) to Benet-Lapid (100)
 * Free text - partisan affiliation. 
-Participants were also asked to fill in a demographic questionnaire at the end containing age, gender, education level and mother tongue.
+Participants were also asked to fill in a demographic questionnaire at the end containing age (numeric), gender, education level and mother tongue.
 
 Political affiliation scales were also coded as dichotomic variables:
-* Political wing affiliation - right (< 40) and left (> 60)
-* Coalition (< 40) or opposition (> 60) supporters
-* Governmental support in recent years - Netanyahu (< 40) to Benet-Lapid (> 60)
+* Political wing affiliation - right (<= 40) and left (>= 60)
+* Coalition (<= 40) or opposition (>= 60) supporters
+* Governmental support in recent years - Netanyahu (<= 40) to Benet-Lapid (>= 60)
 
 ### The pretest aim is twofold:
 1. Manipulation check for the read-aloud stimuli - as we want to stimulate different support-related neural reactions in future participants, we expected differences in support ratings between participants who are right and left wing affiliated. The previous pretest has revealed the expected differences, and now we want to ensure these differences will be replicated for the read-aloud posts.
@@ -71,7 +71,7 @@ Thus, interaction effects show that political alignment meaningfully influenced 
 
 ## Logistic regression
 ### Extremicy labeling of posts by support ratings
-Mixed logistic regression was used to estimate the relationship between extremicy labeling and support ratings of posts. Again, subjects' identity was treated as a random effect. To use a logistic model, we used median values of extreme ratings to divide perceived extremism for each post to either extreme or not extreme.
+Mixed logistic regression was used to estimate the relationship between extremicy labeling and support ratings of posts. Again, subjects' identity was treated as a random effect. To use a logistic model, *we used median values of extreme ratings to divide perceived extremism for each post to either extreme or not extreme*.
 The results showed that higher support ratings were significantly associated with a decreased probability of an extreme response (β = -0.478, p = 2e-16), suggesting that moderate support levels were less likely to produce extreme reactions. 
 
 * Specifically, for each one-unit increase in support, the odds of an extreme response decrease by 38%.
