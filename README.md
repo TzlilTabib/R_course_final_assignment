@@ -47,7 +47,8 @@ Political affiliation scales were also coded as dichotomic variables:
   <img src="./figure_3.png" width="500" />
 <img src="./figure_2.png" width="500" />
   
-2. Preprocessing from raw to filtered data, filtering outliers and unnecessary variables (n (outliers) = 3).  
+2. Preprocessing from raw to filtered data, filtering outliers and unnecessary variables (n (outliers) = 3). Outliers were defined as particiapnts who rated their support in more than half of the posts of any stimulus type (> 9) in an oppposite manner of what was expected based on their political affiliation. For example, a right-wing participant who rated 10 pro-right with a support score of < 3.
+ 
 # Statistical analyses (סעיפים ג1-ג4)
 ## Descriptive statistics
 Summarizing participants mean age (and SD) after filtering by gender and political affiliation.
