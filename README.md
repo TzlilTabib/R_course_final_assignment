@@ -9,6 +9,7 @@ Our participants will be left- and right-wing supporters. Stimuli are real 'X' (
 * Right-wing making anti-left claims.
 * Left-wing making pro-left claims.
 * Left-wing making anti-right claims.
+
 As we already performed one pretest to choose the 18-posts that create the largest left-right support difference, this pretest contained 18 stimuli of each type. Each post was visually apparent and read-aloud by the same male speaker.
 
 ### Procedure
